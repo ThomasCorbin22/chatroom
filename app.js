@@ -8,7 +8,7 @@ const https = require('https');
 const publicDirectory = __dirname + '/public'
 const router = require('./router/router')(express, publicDirectory);
 const setupPassport = require('./passport/init-passport');
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8083;
 
 const SocketRouter = require('./router/SocketIORouter')
 
