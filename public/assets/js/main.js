@@ -2,7 +2,7 @@ let user
 
 $(async function () {
     axios({
-        url: '/login',
+        url: '/app-03/login',
         method: 'get'
     })
     .then((res) => {
@@ -83,7 +83,7 @@ $(async function () {
         e.preventDefault();
 
         axios({
-            url: '/logout',
+            url: '/app-03/logout',
             method: 'get'
         })
         .then(() => {

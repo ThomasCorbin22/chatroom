@@ -30,7 +30,7 @@ app.use(session({
 
 setupPassport(app);
 
-app.use('/', router);
+app.use('/app-03', router);
 
 const initSessions = require('./sessions/init-sessions.js')
 
@@ -49,29 +49,6 @@ initSessions(app,io,redisClient);
 
 new SocketRouter(io,redisClient).router();
 
-// io.on('connection', (socket) => {
-//     console.log('a user connected to the socket');
-
-//     socket.on('subscribe', (room) => {
-//         socket.join(room);
-//         console.log(" a User has joined our room: " + room);
-
-//         chatroom = room;
-//         arrayOfRoom.add(room);
-
-//         socket.on("chat message " + room, (msg, user) => {
-//             console.log(user + ": " + msg);
-//             io.to(chatroom).emit("chat message " + room, msg, user);
-//         });
-//     });
-
-//     socket.on('disconnect', () => {
-//         console.log('a user left us')
-//     });
-// });
-
 server.listen(port);
-
-
 
 module.exports = redisClient;
