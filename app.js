@@ -19,7 +19,7 @@ const server = https.createServer({
 
 const io = require('socket.io').listen(server);
 
-app.use(express.static('public'))
+app.use('/app-03', express.static('public'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(session({
