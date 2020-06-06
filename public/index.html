@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./assets/css/vendors/reset.css">
+    <link rel="stylesheet" href="./assets/css/vendors/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <title>Quick Talk</title>
+</head>
+
+<body>
+    <div id='gradient'></div>
+
+    <div class="container d-flex flex-column">
+        <div id='navbar' class="row p-3 text-uppercase">
+            <a id='home' href="#" class='z-index-2 px-3' role='button'>Quick Talk</a>
+            <a id='login' href="#" class='z-index-2 ml-auto px-3'>Log In</a>
+            <a id='signup' href="#" class='z-index-2 px-3'>Sign Up</a>
+            <a id='logout' href="#" class='ml-auto z-index-2 px-3'>Log Out</a>
+        </div>
+
+        <div id='welcome' class="jumbotron flex-grow-1 z-index-2">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 id='title' class="display-5">This is an app landing page that lets you talk to any of your friends,
+                        whenever you need a <br><span class='logo'>Quick Talk.</span></h1>
+                    <hr class="my-6">
+                    <p id='note'>Log in or sign up to get started.</p>
+                    <div id='rooms'>
+                        <p class="lead d-flex justify-content-between flex-wrap">
+                            <a class="room btn btn-outline-primary px-4 m-1" href="#" role="button">Room 1</a>
+                            <a class="room btn btn-outline-primary px-4 m-1" href="#" role="button">Room 2</a>
+                            <a class="room btn btn-outline-primary px-4 m-1" href="#" role="button">Room 3</a>
+                            <a class="room btn btn-outline-primary px-4 m-1" href="#" role="button">Room 4</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id='message-container' class="z-index-2 d-none flex-column flex-grow-1">
+            <div id='chatbox' class='flex-grow-1 z-index-2'>
+                <ul id="chat-messages" class='z-index-2'></ul>
+            </div>
+            <form id='message-form' class='z-index-2 d-flex align-items-center' action="">
+                <input id="message-input" autocomplete="off" /><button class='btn btn-primary'>Send</button>
+            </form>
+        </div>
+
+        <div id='login-container' class="z-index-2 d-none flex-column flex-grow-1 justify-content-center align-items-center">
+            <div class="card" style="width: 18rem;">
+                <form action="/login" method="post" class="card-body d-flex flex-column">
+                    <label class='card-text'>Email</label>
+                    <input type="text" name="username" />
+
+                    <label class='card-text'>Password</label>
+                    <input type="password" name="password" />
+                    <a href='#' class='card-footer text-muted'>
+                        Forgotten your password?
+                    </a>
+
+                    <input type="submit" value="Log In" class='btn btn-primary my-3'/>
+
+                    <a href="/auth/facebook" class='btn btn-info'>Log in with Facebook</a>
+                </form>
+            </div>
+        </div>
+
+        <div id='signup-container' class="z-index-2 d-none flex-column flex-grow-1 justify-content-center align-items-center">
+            <div class="card" style="width: 18rem;">
+                <form action="/signup" method="post" class="card-body d-flex flex-column">
+                    <label class='card-text'>Display Name</label>
+                    <input type="text" name="displayName" />
+
+                    <label class='card-text'>Email</label>
+                    <input type="text" name="username" />
+
+                    <label class='card-text'>Password</label>
+                    <input type="password" name="password" />
+                    <p class='card-footer text-muted'>
+                        Passwords must contain at least eight characters, including at least 1 letter and 1 number.
+                    </p>
+
+                    <input type="submit" value="Sign Up" class='btn btn-primary my-3'/>
+
+                    <a href="/auth/facebook" class='btn btn-info'>Sign up with Facebook</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.slim.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
