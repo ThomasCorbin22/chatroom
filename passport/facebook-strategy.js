@@ -15,7 +15,7 @@ module.exports = (passport) => {
     passport.use('facebook', new FacebookStrategy({
         clientID: process.env.APP_ID,
         clientSecret: process.env.APP_SECRET,
-        callbackURL: `app-03/auth/facebook/callback`,
+        callbackURL: "https://terrarie.net/app-03/auth/facebook/callback",
         profileFields: ['id', 'email', 'name', 'gender', 'displayName', 'profileUrl']
     }, async (accessToken, refreshToken, profile, done) => {
         console.log(profile);
