@@ -22,7 +22,7 @@ module.exports = (express, path) => {
     router.get("/logout", (req, res) => {
         req.logout();
         console.log('Logged out')
-        res.redirect("/");
+        res.redirect("/app-03");
     });
 
     router.get('/', (req, res) => {
