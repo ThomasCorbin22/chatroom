@@ -10,13 +10,13 @@ module.exports = (express, path) => {
     }
     
     router.get("/auth/facebook", passport.authenticate('facebook', { scope: ["email", "user_gender", "user_link"] }));
-    router.get("/auth/facebook/callback", passport.authenticate('facebook', { successRedirect: '/',
-    failureRedirect: '/' }))
+    router.get("/auth/facebook/callback", passport.authenticate('facebook', { successRedirect: '/app-03',
+    failureRedirect: '/app-03' }))
 
-    router.post('/login', passport.authenticate('local-login', { successRedirect: '/',
-    failureRedirect: '/' }))
-    router.post('/signup', passport.authenticate('local-signup', { successRedirect: '/',
-    failureRedirect: '/' }))
+    router.post('/login', passport.authenticate('local-login', { successRedirect: '/app-03',
+    failureRedirect: '/app-03' }))
+    router.post('/signup', passport.authenticate('local-signup', { successRedirect: '/app-03',
+    failureRedirect: '/app-03' }))
 
 
     router.get("/logout", (req, res) => {
